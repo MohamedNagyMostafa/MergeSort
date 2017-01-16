@@ -46,17 +46,17 @@ void cutArray(int arr[100],int n){
 void sort(int arr1[100],int arr2[100], int arr[100],int s1, int e1, int s2, int e2,int n){
     if(s1 <= e1 || s2 <= e2){
         if(s1 > e1){
-            arr[n] = arr2[s2];
-            sort(arr1,arr2,arr,s1,e1,++s2,e2,++n);
+            arr[n++] = arr2[s2++];
+            sort(arr1,arr2,arr,s1,e1,s2,e2,n);
         }else if(s2 > e2){
-            arr[n] = arr1[s1];
-            sort(arr1,arr2,arr,++s1,e1,s2,e2,++n);
+            arr[n++] = arr1[s1++];
+            sort(arr1,arr2,arr,s1,e1,s2,e2,n);
         }else if (arr1[s1] > arr2[s2]){
-            arr[n] = arr2[s2];
-            sort(arr1,arr2,arr,s1,e1,++s2,e2,++n);
+            arr[n++] = arr2[s2++];
+            sort(arr1,arr2,arr,s1,e1,s2,e2,n);
         }else{
-            arr[n] = arr1[s1];
-            sort(arr1,arr2,arr,++s1,e1,s2,e2,++n);
+            arr[n++] = arr1[s1++];
+            sort(arr1,arr2,arr,s1,e1,s2,e2,n);
         }
     }
 }
